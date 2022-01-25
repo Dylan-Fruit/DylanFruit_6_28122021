@@ -3,7 +3,7 @@ export default function profileFactory(data) {
 
     const picture = `./assets/photographers/${portrait}`;
 
-    function getUserCardDom() {
+    function getUserCardDOM() {
         const photographerHeader = document.querySelector(".photograph-header");
         
         const article = document.createElement("article");
@@ -42,8 +42,8 @@ export default function profileFactory(data) {
         article.appendChild(pTagLine);
         photographerHeader.appendChild(img);
         photographerHeader.appendChild(button);
-        
+
         return article;
     }
-    return { getUserCardDom };
+    return { getUserCardDOM };
 }

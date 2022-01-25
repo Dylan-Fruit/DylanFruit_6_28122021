@@ -80,6 +80,20 @@ body {
   color: #525252;
   font-size: 18px;
 }
+.photograph-medias {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin: 0 100px;
+}
+.photograph-medias article img, .photograph-medias video {
+  height: 351px;
+  width: 350px;
+  border-radius: 2%;
+  margin: 30px 50px;
+  object-fit: cover;
+}
 
 .contact_button {
   font-size: 20px;

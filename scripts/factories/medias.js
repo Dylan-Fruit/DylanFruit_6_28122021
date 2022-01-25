@@ -1,14 +1,14 @@
 export default function mediasFactory(data) {
     const { id, photographerId, title, image, likes, date, price, video } = data;
 
-    function getUserCardDom() {
+    function getMediaCardDOM() {
         const article = document.createElement('article');
         article.setAttribute("id", id);
         
         const photographLegend = document.createElement('div');
         photographLegend.setAttribute("class", "photograph-legend");
         if(image){
-            const picture = `.assets/images/${image}`;
+            const picture = `./assets/images/${image}`;
             const img = document.createElement('img');
             img.setAttribute("src", picture);
             img.setAttribute("tabindex", 0);
@@ -26,22 +26,25 @@ export default function mediasFactory(data) {
             photographLegend.appendChild(titleImage);
         }
         if(video){
-            const videos = `.assets/videos/${video}`;
+            const videos = `./assets/videos/${video}`;
             const videoContent = document.createElement("video");
             videoContent.setAttribute("src", videos);
             videoContent.setAttribute("class", "photograph-videos");
             videoContent.setAttribute("tabindex", 0);
             videoContent.setAttribute("alt", title + " closeup view");
             videoContent.dataset.id = id;
+            videoContent.setAttribute("aria-label", video.replace(/_/g, " ").replace(".mp4", " "));
 
             article.appendChild(videoContent);
 
             const titleVideo = document.createElement('p');
             titleVideo.setAttribute("class", "photograph-title");
             titleVideo.setAttribute("tabindex", 0);
+            titleVideo.textContent = video.replace(/_/g, " ").replace(".mp4", " ");
 
             photographLegend.appendChild(titleVideo);
         }
+        return article;
     }
-    return { getUserCardDom };
+    return { getMediaCardDOM };
 }
