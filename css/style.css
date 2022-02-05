@@ -45,8 +45,115 @@ body {
   color: #525252;
 }
 
+* {
+  margin: 0;
+}
+
 #contact_modal {
   display: none;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  overflow: auto;
+  background: rgba(156, 69, 26, 0.4);
+}
+
+.visible {
+  display: block;
+}
+
+#date, #title {
+  display: none;
+  padding: 20px;
+  font-size: 18px;
+  color: #FFF;
+  cursor: pointer;
+}
+
+#date::before {
+  content: "";
+  position: absolute;
+  border: #FFF 1px solid;
+  width: 131px;
+  left: 10px;
+  top: 65px;
+}
+
+#title::before {
+  content: "";
+  position: absolute;
+  border: #FFF 1px solid;
+  width: 131px;
+  left: 10px;
+  top: 126px;
+}
+
+.sortby {
+  margin: 34px 100px;
+  display: flex;
+  align-items: center;
+}
+.sortby ul {
+  margin: 15px 0 0 10px;
+  padding: 0;
+  background-color: #901C1C;
+  border-radius: 5px;
+  position: absolute;
+  left: 10%;
+  top: 44.5%;
+}
+.sortby-list, .sortby-list_display {
+  list-style: none;
+  padding: 20px;
+  font-size: 18px;
+  color: #FFF;
+  cursor: pointer;
+}
+.sortby-list {
+  display: flex;
+  align-items: center;
+}
+.sortby-list .fa-chevron-down {
+  margin-left: 15px;
+}
+.sortby-list .fa-chevron-up {
+  display: none;
+  margin-left: 15px;
+}
+.sortby-list_display {
+  display: block;
+}
+
+.price-bar {
+  background-color: #D3573C;
+  position: fixed;
+  border-radius: 5px 5px 0 0;
+  right: 20px;
+  bottom: 0;
+  width: 250px;
+  height: 55px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 15px;
+}
+.price-bar_pPrice {
+  font-size: 24px;
+  font-weight: 500;
+}
+.price-bar_TotalLikes {
+  display: flex;
+  align-items: center;
+}
+.price-bar_pTotalLikes {
+  font-size: 24px;
+}
+.price-bar .fa-heart {
+  margin-left: 5px;
+  font-size: 20px;
 }
 
 .photograph-header {
@@ -87,12 +194,42 @@ body {
   flex-wrap: wrap;
   margin: 0 100px;
 }
+.photograph-medias article {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
 .photograph-medias article img, .photograph-medias video {
-  height: 351px;
+  height: 350px;
   width: 350px;
-  border-radius: 2%;
-  margin: 30px 50px;
+  border-radius: 5px;
+  margin: 30px 50px 15px 50px;
   object-fit: cover;
+  cursor: pointer;
+}
+.photograph-legend {
+  display: flex;
+  margin-left: 50px;
+  margin-bottom: 15px;
+  align-items: center;
+  width: 350px;
+  justify-content: space-between;
+}
+.photograph-legend_title, .photograph-legend_likes, .photograph-legend_heart {
+  margin: 0;
+  color: #901C1C;
+  font-size: 24px;
+}
+.photograph-legend_details {
+  display: flex;
+  align-items: center;
+}
+.photograph-legend_title {
+  font-weight: 400;
+}
+.photograph-legend_heart {
+  margin-left: 10px;
+  cursor: pointer;
 }
 
 .contact_button {
@@ -115,17 +252,20 @@ body {
 .modal {
   border-radius: 5px;
   background-color: #DB8876;
-  width: 50%;
+  width: 630px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
   padding: 35px;
-  margin: auto;
+  margin: 5% auto;
 }
 .modal header {
   justify-content: space-between;
   width: 100%;
+  align-items: baseline;
+  margin-bottom: 19px;
+  height: 165px;
 }
 .modal header img {
   cursor: pointer;
@@ -134,6 +274,8 @@ body {
   font-size: 64px;
   font-weight: normal;
   text-align: center;
+  margin: 0;
+  text-align: start;
 }
 
 form {

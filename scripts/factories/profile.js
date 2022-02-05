@@ -34,7 +34,14 @@ export default function profileFactory(data) {
         button.setAttribute("class", "contact_button");
         button.setAttribute("onClick", "displayModal()");
 
+        const contactName = document.querySelector(".contact_modal_name");
+        const nameDisplay = document.createElement("p");
+        nameDisplay.textContent = " " + name;
+        contactName.appendChild(nameDisplay);
+
+        const priceBar = document.querySelector(".price-bar");
         const pPrice = document.createElement("p");
+        pPrice.setAttribute("class", "price-bar_pPrice");
         pPrice.textContent = price + "€/jour"; 
 
         article.appendChild(h1);
@@ -42,6 +49,7 @@ export default function profileFactory(data) {
         article.appendChild(pTagLine);
         photographerHeader.appendChild(img);
         photographerHeader.appendChild(button);
+        priceBar.appendChild(pPrice);
 
         return article;
     }

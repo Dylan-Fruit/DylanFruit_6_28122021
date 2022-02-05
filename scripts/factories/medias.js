@@ -18,8 +18,8 @@ export default function mediasFactory(data) {
 
             article.appendChild(img);
 
-            const titleImage = document.createElement('p');
-            titleImage.setAttribute("class", "photograph-title");
+            const titleImage = document.createElement('h2');
+            titleImage.setAttribute("class", "photograph-legend_title");
             titleImage.setAttribute("tabindex", 0);
             titleImage.textContent = title;
 
@@ -37,14 +37,31 @@ export default function mediasFactory(data) {
 
             article.appendChild(videoContent);
 
-            const titleVideo = document.createElement('p');
-            titleVideo.setAttribute("class", "photograph-title");
+            const titleVideo = document.createElement('h2');
+            titleVideo.setAttribute("class", "photograph-legend_title");
             titleVideo.setAttribute("tabindex", 0);
-            titleVideo.textContent = video.replace(/_/g, " ").replace(".mp4", " ");
+            titleVideo.textContent = title;
 
             photographLegend.appendChild(titleVideo);
         }
+        const pDetails = document.createElement("p");
+        pDetails.setAttribute("class", "photograph-legend_details");
+        
+        const likesCounter = document.createElement("p");
+        likesCounter.textContent = likes;
+        likesCounter.setAttribute("class", "photograph-legend_likes")
+        likesCounter.setAttribute("tabindex", 0);
+
+        const heartIcon = document.createElement('i');
+        heartIcon.setAttribute("class", "fas fa-heart photograph-legend_heart")
+
+        article.appendChild(photographLegend);
+        photographLegend.appendChild(pDetails);
+        pDetails.appendChild(likesCounter);
+        pDetails.appendChild(heartIcon);
+        
         return article;
+
     }
     return { getMediaCardDOM };
 }

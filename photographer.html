@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <script src="https://kit.fontawesome.com/1a297efd06.js" crossorigin="anonymous"></script>
     <link href="css/style.css" rel="stylesheet" type="text/css" />
     <meta charset="utf-8">
     <link rel="icon" type="image/png" href="assets/favicon.png">
@@ -13,12 +14,26 @@
     </header>
     <main id="main">
       <div class="photograph-header"></div>
+      <div class="price-bar">
+        <div class="price-bar_TotalLikes">
+          <p class="price-bar_pTotalLikes"></p>
+          <i class="fas fa-heart"></i>
+        </div>
+      </div>
+      <div class="sortby">
+        <p>Trier par</p>
+        <ul>
+          <li id="popularity" class="sortby-list">Popularité <i class="fas fa-chevron-down"></i><i class="fas fa-chevron-up"></i></li>
+          <li id="date" class="sortby-list_display">Date</li>
+          <li id="title" class="sortby-list_display">Titre</li>
+        </ul>
+      </div>
       <div class="photograph-medias"></div>
     </main>
     <div id="contact_modal">
 			<div class="modal">
 				<header>
-          <h2>Contactez-moi</h2>
+          <h2 class="contact_modal_name">Contactez moi</h2>
           <img src="assets/icons/close.svg" onclick="closeModal()" />
         </header>
 				<form>
