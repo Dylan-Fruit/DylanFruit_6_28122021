@@ -20,3 +20,5 @@ window.addEventListener("keydown", (e) => {
         closeModal();
     }
 });
+
+console.log(modalSubmit);
