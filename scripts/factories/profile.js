@@ -35,7 +35,7 @@ export default function profileFactory(data) {
         const button = document.createElement("button");
         button.textContent = "Contactez moi"
         button.setAttribute("class", "contact_button");
-        button.setAttribute("onClick", "displayModal()");
+        button.setAttribute("onclick", "displayModal()");
 
         const contactName = document.querySelector(".contact_modal_name");
         const nameDisplay = document.createElement("p");
