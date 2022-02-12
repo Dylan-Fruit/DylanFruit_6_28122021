@@ -7,8 +7,11 @@ export default function profileFactory(data) {
         const photographerHeader = document.querySelector(".photograph-header");
         
         const article = document.createElement("article");
-        article.setAttribute("class", "photograph-header_text");
-        article.setAttribute("tabindex", 0);
+        article.setAttribute("class", "photograph-header_main");
+        const textDescription = document.createElement("div");
+        textDescription.setAttribute("class", "photograph-header_text");
+        const subText = document.createElement("article");
+        subText.setAttribute("tabindex", 0);
 
         const img = document.createElement("img");
         img.setAttribute("src", picture);
@@ -44,13 +47,15 @@ export default function profileFactory(data) {
         pPrice.setAttribute("class", "price-bar_pPrice");
         pPrice.textContent = price + "€/jour"; 
 
-        article.appendChild(h1);
-        article.appendChild(pLocation);
-        article.appendChild(pTagLine);
-        photographerHeader.appendChild(img);
-        photographerHeader.appendChild(button);
+        article.appendChild(textDescription);
+        textDescription.appendChild(h1);
+        textDescription.appendChild(subText);
+        subText.appendChild(pLocation);
+        subText.appendChild(pTagLine);
+        article.appendChild(button);
+        article.appendChild(img);
         priceBar.appendChild(pPrice);
-
+        
         return article;
     }
     return { getUserCardDOM };

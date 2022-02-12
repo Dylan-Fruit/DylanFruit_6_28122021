@@ -33,7 +33,6 @@ export default function mediasFactory(data) {
             videoContent.setAttribute("tabindex", 0);
             videoContent.setAttribute("alt", title + " closeup view");
             videoContent.dataset.id = id;
-            videoContent.setAttribute("aria-label", video.replace(/_/g, " ").replace(".mp4", " "));
 
             article.appendChild(videoContent);
 
@@ -53,7 +52,8 @@ export default function mediasFactory(data) {
         likesCounter.setAttribute("tabindex", 0);
 
         const heartIcon = document.createElement('i');
-        heartIcon.setAttribute("class", "fas fa-heart photograph-legend_heart")
+        heartIcon.setAttribute("class", "fas fa-heart photograph-legend_heart");
+        heartIcon.setAttribute("tabindex", 0);
 
         article.appendChild(photographLegend);
         photographLegend.appendChild(pDetails);

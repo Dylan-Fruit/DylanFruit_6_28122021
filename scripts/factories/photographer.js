@@ -4,19 +4,23 @@ export default function photographerFactory(data) {
     const picture = `assets/photographers/${portrait}`;
     
     function getUserCardDOM() {
-        const article = document.createElement( 'article' );
+        const article = document.createElement('article');
         article.setAttribute("tabindex", "0");
         article.setAttribute("class", "photographer_section-article");
+
+        const subText = document.createElement("div");
+        subText.setAttribute("tabindex", 0);
+        subText.setAttribute("class", "photographer_section-description");
 
         const link = document.createElement("a");
         link.setAttribute("href", `./photographer.html?id=${id}`);
         link.setAttribute("aria-label", name);
 
-        const img = document.createElement( 'img' );
+        const img = document.createElement('img');
         img.setAttribute("src", picture)
         img.setAttribute("alt", name);
 
-        const h2 = document.createElement( 'h2' );
+        const h2 = document.createElement('h2');
         const pLocation = document.createElement('p');
         const pTagline = document.createElement('p');
         const pPrice = document.createElement('p');
@@ -36,11 +40,12 @@ export default function photographerFactory(data) {
         article.appendChild(link);
         link.appendChild(img);
         link.appendChild(h2);
-        article.appendChild(pLocation);
-        article.appendChild(pTagline);
-        article.appendChild(pPrice);
+        article.appendChild(subText);
+        subText.appendChild(pLocation);
+        subText.appendChild(pTagline);
+        subText.appendChild(pPrice);
 
-        return (article);
+        return article;
     } 
     return { getUserCardDOM }
 }

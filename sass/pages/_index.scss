@@ -38,4 +38,9 @@
             color: $tertiary-color;
         }
     }
+    &-description{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
 }

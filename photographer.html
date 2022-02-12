@@ -21,15 +21,34 @@
         </div>
       </div>
       <div class="sortby">
-        <p>Trier par</p>
-        <ul>
-          <li id="popularity" class="sortby-list">Popularité <i class="fas fa-chevron-down"></i><i class="fas fa-chevron-up"></i></li>
-          <li id="date" class="sortby-list_display">Date</li>
-          <li id="title" class="sortby-list_display">Titre</li>
-        </ul>
+        <label>Trier par</label>
+        <button id="btnList" tabindex="0" class="sortby-list">
+          <div class="sortby-list_button">
+            <p id="default"></p>
+            <div class="sortby-list_arrow">
+              <div class="fas fa-chevron-down"></div>
+            </div>
+          </div>
+          <ul class="sortby-list_ul" id="sortby-list_ul">
+            <li id="popularity" class="sortby-list_display"></li>
+            <li id="date" class="sortby-list_display">Date</li>
+            <li id="title" class="sortby-list_display">Titre</li>
+          </ul>
+        </button>
       </div>
       <div class="photograph-medias"></div>
     </main>
+    <div class="lightbox">
+      <div class="lightbox-slider">
+        <i class="fas fa-chevron-left" id="previous"></i>
+        <div class="lightbox-slider_medias"></div>
+        <i class="fas fa-chevron-right" id="next"></i>
+        <i class="fas fa-times" id="close"></i>
+      </div>
+      <div class="lightbox-title">
+        <h2 class="title"></h2>
+      </div>
+    </div>
     <div id="contact_modal">
 			<div class="modal">
 				<header>
@@ -38,12 +57,14 @@
         </header>
 				<form>
 					<div>
-						<label>Prénom</label>
-						<input />
-            <label>Nom</label>
-            <input />
-            <label>Email</label>
-            <input type="email" />
+						<label for="firstname">Prénom</label>
+						<input class="contact_input" id="firstname" name="firstname" type="text" />
+            <label for="lastname">Nom</label>
+            <input class="contact_input" id="lastname" name="lastname" type="text" />
+            <label for="email">Email</label>
+            <input class="contact_input" id="email" name="email" type="email" />
+            <label for="message">Votre message</label>
+            <textarea class="contact_input" id="message" name="message"></textarea>
 					</div>
           <button class="contact_button">Envoyer</button>
 				</form>
