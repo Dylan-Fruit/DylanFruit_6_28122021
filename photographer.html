@@ -10,7 +10,7 @@
   </head>
   <body>
     <header>
-      <a href="index.html"><img src="assets/images/logo.png" class="logo" /></a>
+      <a href="index.html"><img src="assets/images/logo.png" class="logo" alt="Fisheye Home page" /></a>
     </header>
     <main id="main">
       <div class="photograph-header"></div>
@@ -22,14 +22,14 @@
       </div>
       <div class="sortby">
         <label>Trier par</label>
-        <button id="btnList" tabindex="0" class="sortby-list">
+        <button id="sortby-btnList" tabindex="0" class="sortby-list" aria-haspopup="listbox" aria-expanded="false">
           <div class="sortby-list_button">
             <p id="default"></p>
             <div class="sortby-list_arrow">
               <div class="fas fa-chevron-down"></div>
             </div>
           </div>
-          <ul class="sortby-list_ul" id="sortby-list_ul">
+          <ul class="sortby-list_ul" id="sortby-list_ul" aria-activedescendant="sortby-btnList" aria-selected="true" aria-labelledby="sortby">
             <li id="popularity" class="sortby-list_display"></li>
             <li id="date" class="sortby-list_display">Date</li>
             <li id="title" class="sortby-list_display">Titre</li>
@@ -38,22 +38,22 @@
       </div>
       <div class="photograph-medias"></div>
     </main>
-    <div class="lightbox">
+    <div class="lightbox" aria-label="image closeup view">
       <div class="lightbox-slider">
-        <i class="fas fa-chevron-left" id="previous"></i>
+        <i class="fas fa-chevron-left" id="previous" aria-label="previous image"></i>
         <div class="lightbox-slider_medias"></div>
-        <i class="fas fa-chevron-right" id="next"></i>
-        <i class="fas fa-times" id="close"></i>
+        <i class="fas fa-chevron-right" id="next" aria-label="next image"></i>
+        <i class="fas fa-times" id="close" aria-label="close dialog"></i>
       </div>
       <div class="lightbox-title">
         <h2 class="title"></h2>
       </div>
     </div>
-    <div id="contact_modal">
+    <div id="contact_modal" aria-labelledby="contact-me">
 			<div class="modal">
 				<header>
           <h2 class="contact_modal_name">Contactez moi</h2>
-          <img id="close" src="assets/icons/close.svg" onclick="closeModal()"/>
+          <img id="close" src="assets/icons/close.svg" onclick="closeModal()" aria-label="Close Contact form" />
         </header>
 				<form>
 					<div>
@@ -70,7 +70,7 @@
 				</form>
 			</div>
 		</div>
-    <script src="scripts/utils/contactForm.js" defer></script>
+    <script src="scripts/utils/contactForm.js"></script>
     <script type="module" src="scripts/pages/photographer.js"></script>
   </body>
 </html>

@@ -1,4 +1,5 @@
 const modalSubmit = document.querySelector(".contact_button");
+const modal = document.getElementById("contact_modal");
 
 function displayModal() {
     const modal = document.getElementById("contact_modal");
@@ -10,7 +11,7 @@ function closeModal() {
     modal.style.display = "none";
 }
 
-modalSubmit.addEventListener("click", (e) => {
+modal.addEventListener("submit", (e) => {
     e.preventDefault();
     closeModal();
 });

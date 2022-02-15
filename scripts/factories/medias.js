@@ -45,6 +45,7 @@ export default function mediasFactory(data) {
         }
         const pDetails = document.createElement("p");
         pDetails.setAttribute("class", "photograph-legend_details");
+        pDetails.setAttribute("aria-label", "likes");
         
         const likesCounter = document.createElement("p");
         likesCounter.textContent = likes;

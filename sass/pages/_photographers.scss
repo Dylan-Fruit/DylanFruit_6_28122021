@@ -52,6 +52,9 @@
             margin: 30px 50px 15px 50px;
             object-fit: cover;
             cursor: pointer;
+            &:hover{
+                transform: scale(1.02);
+            }
         }
     }
     &-legend {
@@ -72,6 +75,9 @@
         }
         &_title {
             font-weight: 400;
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
         }
         &_heart {
             margin-left: 10px;

@@ -105,6 +105,9 @@ body {
   object-fit: cover;
   cursor: pointer;
 }
+.photograph-medias article img:hover, .photograph-medias video:hover {
+  transform: scale(1.02);
+}
 .photograph-legend {
   display: flex;
   margin-left: 50px;
@@ -124,6 +127,9 @@ body {
 }
 .photograph-legend_title {
   font-weight: 400;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 }
 .photograph-legend_heart {
   margin-left: 10px;

@@ -55,7 +55,7 @@ async function getPhotographers() {
     });
 
     // Récupération des éléments dans le DOM pour la fonction de tri
-    const btn = document.getElementById("btnList");
+    const btn = document.getElementById("sortby-btnList");
     const sortByList = document.querySelector("#sortby-list_ul");
     const popularity = document.getElementById("popularity");
     const date = document.getElementById("date");
@@ -176,16 +176,19 @@ async function getPhotographers() {
       lightboxTitle.textContent = lightboxTitleLink.textContent;
 
       const mediaLightboxLink = element.src;
+      const mediaLightboxAlt = element.alt;
 
       if(mediaLightboxLink.includes(".jpg")){
         const img = document.createElement("img");
         img.setAttribute("src", mediaLightboxLink);
+        img.setAttribute("alt", mediaLightboxAlt);
         img.dataset.id = element.dataset.id;
         lightboxMedia.appendChild(img);
       }
       if(mediaLightboxLink.includes(".mp4")){
         const video = document.createElement("video");
         video.setAttribute("src", mediaLightboxLink);
+        video.setAttribute("alt", mediaLightboxAlt);
         video.setAttribute("controls", "");
         video.dataset.id = element.dataset.id;
         lightboxMedia.appendChild(video);
