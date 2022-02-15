@@ -55,7 +55,7 @@ async function getPhotographers() {
     });
 
     // Récupération des éléments dans le DOM pour la fonction de tri
-    const btn = document.getElementById("sortby-btnList");
+    const btnList = document.getElementById("sortby-btnList");
     const sortByList = document.querySelector("#sortby-list_ul");
     const popularity = document.getElementById("popularity");
     const date = document.getElementById("date");
@@ -74,7 +74,7 @@ async function getPhotographers() {
       }
     }
 
-    btn.addEventListener('click', (e) => {
+    btnList.addEventListener('click', (e) => {
       e.preventDefault();
       toggleList();
     });
