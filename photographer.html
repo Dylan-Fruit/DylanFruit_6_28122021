@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="fr">
   <head>
     <script src="https://kit.fontawesome.com/1a297efd06.js" crossorigin="anonymous"></script>
     <link href="css/style.css" rel="stylesheet" type="text/css" />
@@ -17,7 +17,7 @@
       <div class="price-bar">
         <div class="price-bar_TotalLikes">
           <p class="price-bar_pTotalLikes"></p>
-          <i class="fas fa-heart"></i>
+          <span class="fas fa-heart"></span>
         </div>
       </div>
       <div class="sortby">
@@ -40,10 +40,16 @@
     </main>
     <div class="lightbox" aria-label="image closeup view">
       <div class="lightbox-slider">
-        <i class="fas fa-chevron-left" id="previous" aria-label="previous image"></i>
+        <div class="prevLogo">
+          <button class="fas fa-chevron-left" id="previous" aria-label="previous image"></button>
+        </div>
         <div class="lightbox-slider_medias"></div>
-        <i class="fas fa-chevron-right" id="next" aria-label="next image"></i>
-        <i class="fas fa-times" id="close" aria-label="close dialog"></i>
+        <div class="nextLogo">
+          <button class="fas fa-chevron-right" id="next" aria-label="next image"></button>
+        </div>
+        <div class="closeLogo">
+          <button class="fas fa-times" id="close" aria-label="close dialog"></button>
+        </div>
       </div>
       <div class="lightbox-title">
         <h2 class="title"></h2>
@@ -53,7 +59,7 @@
 			<div class="modal">
 				<header>
           <h2 class="contact_modal_name">Contactez moi</h2>
-          <img id="close" src="assets/icons/close.svg" onclick="closeModal()" aria-label="Close Contact form" />
+          <img id="closeModal" src="assets/icons/close.svg" alt="closeModal" onclick="closeModal()" aria-label="Close Contact form" />
         </header>
 				<form>
 					<div>

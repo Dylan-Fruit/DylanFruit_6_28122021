@@ -352,6 +352,8 @@ form textarea {
   color: #901C1C;
   cursor: pointer;
   margin: 0 30px;
+  border: none;
+  background-color: transparent;
 }
 .lightbox-slider .fa-times {
   position: absolute;
@@ -360,6 +362,8 @@ form textarea {
   font-size: 50px;
   color: #901C1C;
   cursor: pointer;
+  border: none;
+  background-color: transparent;
 }
 .lightbox-slider_medias {
   display: flex;
