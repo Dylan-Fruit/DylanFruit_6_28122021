@@ -1,0 +1,24 @@
+{
+  "name": "dylanfruit_6_28122021",
+  "version": "1.0.0",
+  "description": "Rien à installer ici, il suffit d'ouvrir le fichier `index.html`.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Dylan-Fruit/DylanFruit_6_28122021.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Dylan-Fruit/DylanFruit_6_28122021/issues"
+  },
+  "homepage": "https://github.com/Dylan-Fruit/DylanFruit_6_28122021#readme",
+  "devDependencies": {
+    "eslint": "^8.9.0",
+    "prettier": "^2.5.1"
+  }
+}
