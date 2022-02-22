@@ -20,30 +20,30 @@
           <span class="fas fa-heart"></span>
         </div>
       </div>
-      <div class="sortby">
+      <div class="sortby" id="sortby">
         <label>Trier par</label>
-        <button id="btnList" tabindex="0" class="sortby-list" aria-haspopup="listbox" aria-expanded="false">
+        <div id="btnList" tabindex="0" class="sortby-list" aria-haspopup="listbox" aria-expanded="false" role="list">
           <div class="sortby-list_button">
             <p id="default"></p>
             <div class="sortby-list_arrow">
-              <div class="fas fa-chevron-down"></div>
+              <span class="fas fa-chevron-down"></span>
             </div>
           </div>
-          <ul class="sortby-list_ul" id="sortby-list_ul" aria-activedescendant="btnList" aria-selected="true" aria-labelledby="sortby">
-            <li id="popularity" class="sortby-list_display"></li>
-            <li id="date" class="sortby-list_display">Date</li>
-            <li id="title" class="sortby-list_display">Titre</li>
+          <ul class="sortby-list_ul" id="sortby-list_ul" aria-activedescendant="popularity" aria-labelledby="sortby btnList" role="listbox">
+            <li id="popularity" class="sortby-list_display" tabindex="0"></li>
+            <li id="date" class="sortby-list_display" tabindex="0">Date</li>
+            <li id="title" class="sortby-list_display" tabindex="0">Titre</li>
           </ul>
-        </button>
+        </div>
       </div>
       <div class="photograph-medias"></div>
     </main>
-    <div class="lightbox" aria-label="image closeup view">
+    <div class="lightbox" aria-label="image closeup view" role="dialog" aria-modal="true" tabindex="0" aria-hidden="false">
       <div class="lightbox-slider">
         <div class="prevLogo">
           <button class="fas fa-chevron-left" id="previous" aria-label="previous image"></button>
         </div>
-        <div class="lightbox-slider_medias"></div>
+        <div class="lightbox-slider_medias" tabindex="0"></div>
         <div class="nextLogo">
           <button class="fas fa-chevron-right" id="next" aria-label="next image"></button>
         </div>
@@ -52,10 +52,9 @@
         </div>
       </div>
       <div class="lightbox-title">
-        <h2 class="title"></h2>
       </div>
     </div>
-    <div id="contact_modal" aria-labelledby="contact-me">
+    <div id="contact_modal" aria-labelledby="contact_modal">
 			<div class="modal">
 				<header>
           <h2 class="contact_modal_name">Contactez moi</h2>

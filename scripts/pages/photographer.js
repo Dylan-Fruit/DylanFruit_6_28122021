@@ -52,6 +52,13 @@ async function getPhotographers() {
       const mediaCardDOM = mediaCards.getMediaCardDOM();
       mediaCardDOM.children[0].addEventListener("click", () => clickLightbox(mediaCardDOM.children[0]));
       photographerMedias.appendChild(mediaCardDOM);
+
+      // Ouverture de la lightbox en appuyant sur la touche entrée
+      mediaCardDOM.children[0].addEventListener("keypress", (e) => {
+        if (e.key === "Enter"){
+          clickLightbox(mediaCardDOM.children[0]);
+        }
+      });
     });
 
     // Récupération des éléments dans le DOM pour la fonction de tri
@@ -79,28 +86,40 @@ async function getPhotographers() {
       toggleList();
     });
 
+    btn.addEventListener("keypress", (e) => {
+      if(e.key === "Enter"){
+        toggleList();
+      }
+    });
+
     // Fonction de choix dans la liste déroulante
     const selectedChoice = () => {
       if(byDefault.innerHTML === popularity.innerHTML){
         popularity.classList.remove("sortby-list_display");
         popularity.innerHTML = "";
+        popularity.removeAttribute("tabindex", 0);
       } else {
         popularity.innerHTML = "Popularité";
         popularity.classList.add("sortby-list_display");
+        popularity.setAttribute("tabindex", 0);
       }
       if(byDefault.innerHTML === date.innerHTML){
         date.classList.remove("sortby-list_display");
         date.innerHTML = "";
+        date.removeAttribute("tabindex", 0);
       } else {
         date.innerHTML = "Date";
         date.classList.add("sortby-list_display");
+        date.setAttribute("tabindex", 0);
       }
       if(byDefault.innerHTML === title.innerHTML){
         title.classList.remove("sortby-list_display");
         title.innerHTML = "";
+        title.removeAttribute("tabindex", 0);
       } else {
         title.innerHTML = "Titre";
         title.classList.add("sortby-list_display");
+        title.setAttribute("tabindex", 0);
       }
     };
 
@@ -119,6 +138,12 @@ async function getPhotographers() {
       sortByLike();
     });
 
+    popularity.addEventListener("keypress", (e) => {
+      if(e.key === "Enter"){
+        sortByLike();
+      }
+    });
+
     // Tri par date
     function sortByDate() {
       byDefault.innerHTML = "Date";
@@ -132,6 +157,12 @@ async function getPhotographers() {
     
     date.addEventListener("click", () => {
       sortByDate();
+    });
+
+    date.addEventListener("keypress", (e) => {
+      if(e.key === "Enter"){
+        sortByDate();
+      }
     });
 
     // Tri par titre
@@ -158,6 +189,12 @@ async function getPhotographers() {
       sortByTitle();
     });
 
+    title.addEventListener("keypress", (e) => {
+      if(e.key === "Enter"){
+        sortByTitle();
+      }
+    });
+
     // Tri par like affiché par défaut 
     sortByLike();
     selectedChoice();
@@ -165,10 +202,15 @@ async function getPhotographers() {
     // Affichage de la lightbox et des images dedans avec navigation
     const lightbox = document.querySelector(".lightbox");
     const lightboxMedia = document.querySelector(".lightbox-slider_medias");
-    const lightboxTitle = document.querySelector(".title");
+    const lightboxTitleDiv = document.querySelector(".lightbox-title");
+    const lightboxTitle = document.createElement("h2");
+    lightboxTitle.setAttribute("class", "title");
+    lightboxTitle.setAttribute("tabindex", 0);
     const previousMedia = document.getElementById("previous");
     const nextMedia = document.getElementById("next");
     const close = document.getElementById("close");
+
+    lightboxTitleDiv.appendChild(lightboxTitle);
 
     // Fonction pour ouvrir la lightbox avec affichage de l'élément choisi au clic
     const clickLightbox = (element) => {
