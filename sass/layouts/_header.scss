@@ -1,16 +1,28 @@
 header {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    height: 90px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  height: 90px;
 }
 
 .logo {
-    height: 50px;
-    margin-left: 100px;
+  height: 50px;
+  margin-left: 100px;
 }
 h1 {
-    color: #901C1C;
-    margin-right: 100px;
+  color: #901c1c;
+  margin-right: 100px;
+}
+
+@media screen and(max-width: 768px) {
+  header {
+    flex-direction: column;
+    .logo {
+      margin: 20px 0 20px 0;
+    }
+    h1 {
+      margin-right: 0;
+    }
+  }
 }

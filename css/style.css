@@ -4,10 +4,12 @@ body {
 }
 
 .photographer_section {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  gap: 70px;
-  margin-top: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 70px 170px;
+  margin: 100px 0 50px 0;
 }
 .photographer_section-article {
   justify-self: center;
@@ -29,13 +31,13 @@ body {
   object-fit: cover;
 }
 .photographer_section-article-name {
-  color: #D3573C;
+  color: #d3573c;
   font-size: 36px;
   margin: 0;
 }
 .photographer_section-article-location {
   margin: 0;
-  color: #901C1C;
+  color: #901c1c;
 }
 .photographer_section-article-tagline {
   margin: 0;
@@ -71,13 +73,13 @@ body {
   border-radius: 50%;
 }
 .photograph-header_name {
-  color: #D3573C;
+  color: #d3573c;
   font-size: 55px;
   font-weight: lighter;
   margin: 0;
 }
 .photograph-header_location {
-  color: #901C1C;
+  color: #901c1c;
   font-size: 25px;
   margin: 13px 0 0 0;
 }
@@ -97,7 +99,8 @@ body {
   justify-content: center;
   flex-direction: column;
 }
-.photograph-medias article img, .photograph-medias video {
+.photograph-medias article img,
+.photograph-medias video {
   height: 350px;
   width: 350px;
   border-radius: 5px;
@@ -105,7 +108,8 @@ body {
   object-fit: cover;
   cursor: pointer;
 }
-.photograph-medias article img:hover, .photograph-medias video:hover {
+.photograph-medias article img:hover,
+.photograph-medias video:hover {
   transform: scale(1.02);
 }
 .photograph-legend {
@@ -118,7 +122,7 @@ body {
 }
 .photograph-legend_title, .photograph-legend_likes, .photograph-legend_heart {
   margin: 0;
-  color: #901C1C;
+  color: #901c1c;
   font-size: 24px;
 }
 .photograph-legend_details {
@@ -156,18 +160,18 @@ body {
   width: 170px;
   height: 70px;
   border: none;
-  background-color: #901C1C;
+  background-color: #901c1c;
   border-radius: 5px;
   cursor: pointer;
 }
 .contact_button:hover {
-  background-color: #DB8876;
+  background-color: #db8876;
   color: #000000;
 }
 
 .modal {
   border-radius: 5px;
-  background-color: #DB8876;
+  background-color: #db8876;
   width: 630px;
   display: flex;
   flex-direction: column;
@@ -201,7 +205,7 @@ form {
   align-items: flex-start;
 }
 form label {
-  color: #312E2E;
+  color: #312e2e;
   font-size: 36px;
 }
 form div {
@@ -252,8 +256,8 @@ form textarea {
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: #901C1C;
-  color: #FFF;
+  background-color: #901c1c;
+  color: #fff;
   border-radius: 5px;
   border: none;
   display: flex;
@@ -269,9 +273,9 @@ form textarea {
   top: 100%;
   left: 0;
   border: none;
-  color: #FFF;
+  color: #fff;
   border-radius: 0 0 5px 5px;
-  background-color: #901C1C;
+  background-color: #901c1c;
   list-style: none;
   padding: 0;
   margin-top: -4px;
@@ -285,14 +289,14 @@ form textarea {
 .sortby-list_display:before {
   content: "";
   position: absolute;
-  border: #FFF 1px solid;
+  border: #fff 1px solid;
   width: 131px;
   left: 10px;
   top: 0px;
 }
 
 .price-bar {
-  background-color: #DB8876;
+  background-color: #db8876;
   position: fixed;
   border-radius: 5px 5px 0 0;
   right: 20px;
@@ -330,7 +334,7 @@ form textarea {
   position: fixed;
   top: 0;
   left: 0;
-  background: #FFF;
+  background: #fff;
 }
 .lightbox-slider {
   display: flex;
@@ -347,9 +351,10 @@ form textarea {
   margin: 0 40px;
   border-radius: 5px;
 }
-.lightbox-slider .fa-chevron-left, .lightbox-slider .fa-chevron-right {
+.lightbox-slider .fa-chevron-left,
+.lightbox-slider .fa-chevron-right {
   font-size: 50px;
-  color: #901C1C;
+  color: #901c1c;
   cursor: pointer;
   margin: 0 30px;
   border: none;
@@ -360,7 +365,7 @@ form textarea {
   top: 0;
   left: 100%;
   font-size: 50px;
-  color: #901C1C;
+  color: #901c1c;
   cursor: pointer;
   border: none;
   background-color: transparent;
@@ -385,11 +390,129 @@ form textarea {
   width: 100%;
 }
 .lightbox-title h2 {
-  color: #901C1C;
+  color: #901c1c;
   margin: 30px 0 0 0;
   width: 855px;
 }
 
+@media screen and (max-width: 768px) {
+  .photograph-header {
+    margin: 0;
+    padding: 20px;
+  }
+  .photograph-header_main {
+    flex-direction: column-reverse;
+  }
+  .photograph-header_img {
+    margin-bottom: 30px;
+  }
+  .photograph-header_text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .photograph-header_text article {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .photograph-header_name {
+    font-size: 30px;
+    margin-top: 30px;
+  }
+  .photograph-medias {
+    margin: 0;
+  }
+  .photograph-medias article img,
+.photograph-medias video {
+    margin: 30px 20px 15px 20px;
+  }
+  .photograph-legend {
+    margin-left: 20px;
+  }
+
+  .sortby {
+    margin: 15px 0 0 20px;
+  }
+
+  .price-bar {
+    z-index: 1;
+  }
+
+  .lightbox {
+    z-index: 3;
+  }
+  .lightbox-slider {
+    width: 300px;
+    height: 300px;
+  }
+  .lightbox-slider img,
+.lightbox-slider video {
+    width: 300px;
+    height: 300px;
+    margin: 0;
+  }
+  .lightbox-slider .fa-chevron-left,
+.lightbox-slider .fa-chevron-right {
+    font-size: 30px;
+    margin: 0 -15px;
+  }
+  .lightbox-slider .fa-times {
+    font-size: 30px;
+    left: 95%;
+    top: -5px;
+  }
+  .lightbox-title h2 {
+    width: 100%;
+    margin: 30px 0 0 45px;
+  }
+
+  .modal {
+    z-index: 2;
+    width: 300px;
+    padding: 35px;
+    margin: 5% auto;
+  }
+  .modal header {
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    align-items: baseline;
+    margin-bottom: 19px;
+    height: 90px;
+  }
+  .modal header h2 {
+    font-size: 30px;
+  }
+  .modal header img {
+    width: 20px;
+    height: 20px;
+  }
+  .modal form label {
+    font-size: 20px;
+  }
+  .modal form div {
+    margin-bottom: 26px;
+  }
+  .modal form input {
+    height: 30px;
+    margin-bottom: 20px;
+  }
+  .modal form textarea {
+    height: 70px;
+  }
+
+  .contact_button {
+    font-size: 16px;
+    font-weight: bold;
+    color: white;
+    padding: 11px;
+    width: 50%;
+    height: inherit;
+  }
+}
 header {
   display: flex;
   flex-direction: row;
@@ -404,8 +527,20 @@ header {
 }
 
 h1 {
-  color: #901C1C;
+  color: #901c1c;
   margin-right: 100px;
+}
+
+@media screen and (max-width: 768px) {
+  header {
+    flex-direction: column;
+  }
+  header .logo {
+    margin: 20px 0 20px 0;
+  }
+  header h1 {
+    margin-right: 0;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */

@@ -1,16 +1,25 @@
 <!DOCTYPE html>
 <html lang="fr">
   <head>
-    <script src="https://kit.fontawesome.com/1a297efd06.js" crossorigin="anonymous"></script>
+    <script
+      src="https://kit.fontawesome.com/1a297efd06.js"
+      crossorigin="anonymous"
+    ></script>
     <link href="css/style.css" rel="stylesheet" type="text/css" />
-    <meta charset="utf-8">
-    <link rel="icon" type="image/png" href="assets/favicon.png">
-    <link href="https://fonts.googleapis.com/css?family=DM+Sans&display=swap" rel="stylesheet">
-    <title>Fisheye - photographe </title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/png" href="assets/favicon.png" />
+    <link
+      href="https://fonts.googleapis.com/css?family=DM+Sans&display=swap"
+      rel="stylesheet"
+    />
+    <title>Fisheye - photographe</title>
   </head>
   <body>
     <header>
-      <a href="index.html"><img src="assets/images/logo.png" class="logo" alt="Fisheye Home page" /></a>
+      <a href="index.html"
+        ><img src="assets/images/logo.png" class="logo" alt="Fisheye Home page"
+      /></a>
     </header>
     <main id="main">
       <div class="photograph-header"></div>
@@ -22,14 +31,27 @@
       </div>
       <div class="sortby" id="sortby">
         <label>Trier par</label>
-        <div id="btnList" tabindex="0" class="sortby-list" aria-haspopup="listbox" aria-expanded="false" role="list">
+        <div
+          id="btnList"
+          tabindex="0"
+          class="sortby-list"
+          aria-haspopup="listbox"
+          aria-expanded="false"
+          role="list"
+        >
           <div class="sortby-list_button">
             <p id="default"></p>
             <div class="sortby-list_arrow">
               <span class="fas fa-chevron-down"></span>
             </div>
           </div>
-          <ul class="sortby-list_ul" id="sortby-list_ul" aria-activedescendant="popularity" aria-labelledby="sortby btnList" role="listbox">
+          <ul
+            class="sortby-list_ul"
+            id="sortby-list_ul"
+            aria-activedescendant="popularity"
+            aria-labelledby="sortby btnList"
+            role="listbox"
+          >
             <li id="popularity" class="sortby-list_display" tabindex="0"></li>
             <li id="date" class="sortby-list_display" tabindex="0">Date</li>
             <li id="title" class="sortby-list_display" tabindex="0">Titre</li>
@@ -38,43 +60,81 @@
       </div>
       <div class="photograph-medias"></div>
     </main>
-    <div class="lightbox" aria-label="image closeup view" role="dialog" aria-modal="true" tabindex="0" aria-hidden="false">
+    <div
+      class="lightbox"
+      aria-label="image closeup view"
+      role="dialog"
+      aria-modal="true"
+      tabindex="0"
+      aria-hidden="false"
+    >
       <div class="lightbox-slider">
         <div class="prevLogo">
-          <button class="fas fa-chevron-left" id="previous" aria-label="previous image"></button>
+          <button
+            class="fas fa-chevron-left"
+            id="previous"
+            aria-label="previous image"
+          ></button>
         </div>
         <div class="lightbox-slider_medias" tabindex="0"></div>
         <div class="nextLogo">
-          <button class="fas fa-chevron-right" id="next" aria-label="next image"></button>
+          <button
+            class="fas fa-chevron-right"
+            id="next"
+            aria-label="next image"
+          ></button>
         </div>
         <div class="closeLogo">
-          <button class="fas fa-times" id="close" aria-label="close dialog"></button>
+          <button
+            class="fas fa-times"
+            id="close"
+            aria-label="close dialog"
+          ></button>
         </div>
       </div>
-      <div class="lightbox-title">
-      </div>
+      <div class="lightbox-title"></div>
     </div>
     <div id="contact_modal" aria-labelledby="contact_modal">
-			<div class="modal">
-				<header>
+      <div class="modal">
+        <header>
           <h2 class="contact_modal_name">Contactez moi</h2>
-          <img id="closeModal" src="assets/icons/close.svg" alt="closeModal" onclick="closeModal()" aria-label="Close Contact form" />
+          <img
+            id="closeModal"
+            src="assets/icons/close.svg"
+            alt="closeModal"
+            onclick="closeModal()"
+            aria-label="Close Contact form"
+          />
         </header>
-				<form>
-					<div>
-						<label for="firstname">Prénom</label>
-						<input class="contact_input" id="firstname" name="firstname" type="text" />
+        <form>
+          <div>
+            <label for="firstname">Prénom</label>
+            <input
+              class="contact_input"
+              id="firstname"
+              name="firstname"
+              type="text"
+            />
             <label for="lastname">Nom</label>
-            <input class="contact_input" id="lastname" name="lastname" type="text" />
+            <input
+              class="contact_input"
+              id="lastname"
+              name="lastname"
+              type="text"
+            />
             <label for="email">Email</label>
             <input class="contact_input" id="email" name="email" type="email" />
             <label for="message">Votre message</label>
-            <textarea class="contact_input" id="message" name="message"></textarea>
-					</div>
+            <textarea
+              class="contact_input"
+              id="message"
+              name="message"
+            ></textarea>
+          </div>
           <button class="contact_button">Envoyer</button>
-				</form>
-			</div>
-		</div>
+        </form>
+      </div>
+    </div>
     <script src="scripts/utils/contactForm.js"></script>
     <script type="module" src="scripts/pages/photographer.js"></script>
   </body>

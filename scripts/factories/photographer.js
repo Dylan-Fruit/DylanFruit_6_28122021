@@ -1,52 +1,51 @@
 export default function photographerFactory(data) {
-    const { name, portrait, city, country, tagline, price, id } = data;
+  const { name, portrait, city, country, tagline, price, id } = data;
 
-    const picture = `assets/photographers/${portrait}`;
-    
-    function getUserCardDOM() {
-        const article = document.createElement('article');
-        article.setAttribute("tabindex", "0");
-        article.setAttribute("class", "photographer_section-article");
+  const picture = `assets/photographers/${portrait}`;
 
-        const subText = document.createElement("div");
-        subText.setAttribute("tabindex", 0);
-        subText.setAttribute("class", "photographer_section-description");
+  function getUserCardDOM() {
+    const article = document.createElement("article");
+    article.setAttribute("tabindex", "0");
+    article.setAttribute("class", "photographer_section-article");
 
-        const link = document.createElement("a");
-        link.setAttribute("href", `./photographer.html?id=${id}`);
-        link.setAttribute("aria-label", name);
+    const subText = document.createElement("div");
+    subText.setAttribute("tabindex", 0);
+    subText.setAttribute("class", "photographer_section-description");
 
-        const img = document.createElement('img');
-        img.setAttribute("src", picture)
-        img.setAttribute("alt", name);
+    const link = document.createElement("a");
+    link.setAttribute("href", `./photographer.html?id=${id}`);
+    link.setAttribute("aria-label", name);
 
-        const h2 = document.createElement('h2');
-        const pLocation = document.createElement('p');
-        const pTagline = document.createElement('p');
-        const pPrice = document.createElement('p');
+    const img = document.createElement("img");
+    img.setAttribute("src", picture);
+    img.setAttribute("alt", name);
 
-        h2.textContent = name;
-        h2.setAttribute("class", "photographer_section-article-name");
+    const h2 = document.createElement("h2");
+    const pLocation = document.createElement("p");
+    const pTagline = document.createElement("p");
+    const pPrice = document.createElement("p");
 
-        pLocation.textContent = city + ", " + country;
-        pLocation.setAttribute("class", "photographer_section-article-location");
+    h2.textContent = name;
+    h2.setAttribute("class", "photographer_section-article-name");
 
-        pTagline.textContent = tagline;
-        pTagline.setAttribute("class", "photographer_section-article-tagline");
+    pLocation.textContent = city + ", " + country;
+    pLocation.setAttribute("class", "photographer_section-article-location");
 
-        pPrice.textContent = price + "€/jour";
-        pPrice.setAttribute("class", "photographer_section-article-price");
+    pTagline.textContent = tagline;
+    pTagline.setAttribute("class", "photographer_section-article-tagline");
 
-        article.appendChild(link);
-        link.appendChild(img);
-        link.appendChild(h2);
-        article.appendChild(subText);
-        subText.appendChild(pLocation);
-        subText.appendChild(pTagline);
-        subText.appendChild(pPrice);
+    pPrice.textContent = price + "€/jour";
+    pPrice.setAttribute("class", "photographer_section-article-price");
 
-        return article;
-    } 
-    return { getUserCardDOM }
+    article.appendChild(link);
+    link.appendChild(img);
+    link.appendChild(h2);
+    article.appendChild(subText);
+    subText.appendChild(pLocation);
+    subText.appendChild(pTagline);
+    subText.appendChild(pPrice);
+
+    return article;
+  }
+  return { getUserCardDOM };
 }
-
