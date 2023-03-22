@@ -376,10 +376,13 @@ form {
       margin: 0;
       article img,
       video {
+        width: 300px;
+        height: 300px;
         margin: 30px 20px 15px 20px;
       }
     }
     &-legend {
+      width: 300px;
       margin-left: 20px;
     }
   }
